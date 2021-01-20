@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My Webpage</title>
+        <title>Projects</title>
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <!-- Add my stylesheet and the bootstrapCDN compiled CSS and JS source -->
           <link rel = "stylesheet" href = "styles.css">
@@ -15,17 +15,30 @@
           <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
            crossorigin=""></script>
+           <script src="https://unpkg.com/esri-leaflet"></script>
+           <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder/dist/esri-leaflet-geocoder.css"/>
+           <script src="https://unpkg.com/esri-leaflet-geocoder"></script>
     </head>
     <body style="background-color:black;">
       <div class="header">
            <a href="index.html" class="btn btn-outline-dark" role="button" aria-pressed="true">Home</a>
            <a href="about.html" class="btn btn-outline-dark" role="button" aria-pressed="true">About</a>
            <a href="art.html" class="btn btn-outline-dark" role="button" aria-pressed="true">Art</a>
-           <a href="map.html" class="btn btn-outline-dark btn active" role="button" aria-pressed="true">Map</a>
+           <a href="projects.html" class="btn btn-outline-dark btn active" role="button" aria-pressed="true">Projects</a>
        </div>
 
+       <div class="row">
+         <div class="left">
+           <h1> M.C. Detailing </h1>
 
-        <div id="map"></div>
+         </div>
+
+         <div class="right">
+           <h1> Bike Trackr </h1>
+           <div id="map"></div>
+         </div>
+      </div>
+
 
         <script>
         //Add map variable and set view to calgary
@@ -34,6 +47,9 @@
         L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key=30b6c838-4624-47eb-964a-87fcc2e3eb39',{maxZoom: 20, attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>,&copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'}).addTo(map);
         //Request user geolocation
         map.locate({setView: true, maxZoom: 15});
+        var searchControl = L.esri.Geocoding.geosearch().addTo(map);
+        var results = L.layerGroup().addTo(map);
+        var geocodeService = L.esri.Geocoding.geocodeService();
         //If location found
         function onLocationFound(e) {
         var radius = e.accuracy;
