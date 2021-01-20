@@ -1,12 +1,12 @@
 h1 {
   color: grey;
   font-family: 'Courier New', monospace;
-  font-size: 300%;
+  font-size: 350%;
 }
 p {
   color: grey;
   font-family: 'Courier New', monospace;
-  font-size: 160%;
+  font-size: 155%;
 }
 
 p2 {
@@ -25,12 +25,13 @@ p3 {
 color: grey;
 font-family: 'Courier New', monospace;
 font-size: 160%;
-text-align: center;
+text-align: left;
 list-style: inside;
 }
 
 .about {
   padding: 10px;
+  width: 70%;
   margin: auto;
   text-align: center;
 }
@@ -58,8 +59,15 @@ list-style: inside;
 
 .center2 {
   margin: auto;
-  width: 60%;
+  width: 80%;
   padding: 30px 0;
+  text-align: center;
+}
+
+.center3 {
+  margin: auto;
+  width: 20%;
+  padding: 10px 0;
   text-align: center;
 }
 
@@ -87,21 +95,34 @@ list-style: inside;
   text-align: center;
 }
 
-.images {
-  width: 100%;
-  padding: 20px;
+img.images {
+  width: auto ;
+  max-width: 50% ;
+  height: auto ;
 }
+
 
 @media screen and (max-width: 400px) {
-  .row {
-    flex-direction: column;
+  img.images {
+    width: auto ;
+    max-width: 100% ;
+    height: auto ;
   }
-  .images{
-  width: 50%;
+  .center {
+    width: 90%;
+  }
+  .center2 {
+    width: 80%;
+  }
+  .center3 {
+    width: 60%;
+  }
+  .about {
+    width: 90%;
   }
 }
 
-#map { height: 500px; }
+#map { height: 500px; width: auto; }
 
 #circle {
   float: left;
@@ -128,8 +149,11 @@ table, th, td {
 }
 
 .flex-item {
-  background: #f1f1f1;
-  padding: 5px;
+  outline-style: solid;
+  outline-width: 5px;
+  outline-color: grey;
+  background: white;
+  padding: 0;
   width: 300px;
   height: 150px;
   margin-top: 10px;
@@ -137,6 +161,6 @@ table, th, td {
   line-height: 150px;
   color: grey;
   font-weight: bold;
-  font-size: 3em;
+  font-size: 1.5em;
   text-align: center;
 }

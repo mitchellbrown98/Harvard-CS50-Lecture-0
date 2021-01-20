@@ -32,7 +32,7 @@
          <div class="left">
            <h1> M.C. Detailing </h1>
            <div class="images">
-           <img src="detailing.png" width="486.6" height="234">
+           <img class="images" src="detailing.png">
            </div>
            <p3> My friend Christian and myself have successfully co-founded and operated a mobile auto detailing business, which has required us to be imaginative, creative, flexible, and detailed oriented. Since 2015, we have expanded our business to include large scale contract work, which requires us to be resourceful and efficient in finding solutions to any challenges that arise while keeping our detailing team focused on providing an unmatched customer experience. The table below shows the number of clients we serviced and the gross income for each summer of operation.</p3>
            <br><br>
@@ -75,12 +75,12 @@
            </tr>
          </table>
            <br>
-           <a href="https://mcdetailingyyc.wixsite.com/mc-detailing" class="btn btn-dark" role="button" aria-pressed="true" target="_blank">View Website</a>
+           <a href="https://mcdetailingyyc.wixsite.com/mc-detailing" class="btn btn-dark" role="button" aria-pressed="true" target="_blank">View M.C. Detailing Website</a>
          </div>
 <!-- Second column, which uses a leaflet map -->
          <div class="right">
            <h1> Bike Trackr </h1>
-           <p3> I have recently started a new project with the goal of creating a low-cost GPS tracking system for my bike. I am using leaflet maps to display a marker and information on a webpage (example below), and an AWS windows environment server to receive GPS TCP/UDP data and store it in an SQL database. I can then pass this information to my webpage and update the location of the marker and address information. </p3>
+           <p3> I have recently started a new project with the goal of creating a low-cost GPS tracking system for my bike. I am using leaflet maps to display a marker and information on a webpage (example below), and an AWS windows environment server to receive GPS TCP/UDP data and store it in an SQL database. I can then pass this information to my webpage and update the location and information of the marker. </p3>
 <!-- add the map here -->
            <div id="map"></div>
          </div>
@@ -121,20 +121,16 @@
          mark.bindPopup('<b> Name:</b> Your Bike' + '<br><b>Last Reported Time: </b>' + hr + ':' + mn + '<br> <b> Address: </b>' + address + '<br> <b> Within:</b> ' + radius + ' meters').openPopup();
         });
 
-
-
          L.circle(e.latlng, radius).addTo(map);
          }
 
          map.on('locationfound', onLocationFound);
          //If user denies location request, display message.
          function onLocationError(e) {
-         alert(e.message);
+         alert("Geolocation error: User denied Geolocation. Please reload the page and allow geolocation to see the Bike Trackr example.");
          }
          map.on('locationerror', onLocationError);
 
-    </script>
-
-
+      </script>
     </body>
 </html>
