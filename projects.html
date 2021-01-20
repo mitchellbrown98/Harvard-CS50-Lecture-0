@@ -20,26 +20,73 @@
            <script src="https://unpkg.com/esri-leaflet-geocoder"></script>
     </head>
     <body style="background-color:black;">
+      <!-- Add in header and bootstrap nav buttons -->
       <div class="header">
            <a href="index.html" class="btn btn-outline-dark" role="button" aria-pressed="true">Home</a>
            <a href="about.html" class="btn btn-outline-dark" role="button" aria-pressed="true">About</a>
            <a href="art.html" class="btn btn-outline-dark" role="button" aria-pressed="true">Art</a>
            <a href="projects.html" class="btn btn-outline-dark btn active" role="button" aria-pressed="true">Projects</a>
        </div>
-
+<!-- Create 2 columns with row and side classes -->
        <div class="row">
          <div class="left">
            <h1> M.C. Detailing </h1>
-
+           <div class="images">
+           <img src="detailing.png" width="486.6" height="234">
+           </div>
+           <p3> My friend Christian and myself have successfully co-founded and operated a mobile auto detailing business, which has required us to be imaginative, creative, flexible, and detailed oriented. Since 2015, we have expanded our business to include large scale contract work, which requires us to be resourceful and efficient in finding solutions to any challenges that arise while keeping our detailing team focused on providing an unmatched customer experience. The table below shows the number of clients we serviced and the gross income for each summer of operation.</p3>
+           <br><br>
+           <!-- Add in a table -->
+           <table style="width:100%">
+           <tr>
+             <th>Year</th>
+             <th>Number of Clients</th>
+             <th>Gross Income</th>
+           </tr>
+           <tr>
+             <td>2015</td>
+             <td>53</td>
+             <td>$10,175.00</td>
+           </tr>
+           <tr>
+             <td>2016</td>
+             <td>37</td>
+             <td>$8,073.25</td>
+           </tr>
+           <tr>
+             <td>2017</td>
+             <td>49</td>
+             <td>$10,888.89</td>
+           </tr>
+           <tr>
+             <td>2018</td>
+             <td>31</td>
+             <td>$9,911.75</td>
+           </tr>
+           <tr>
+             <td>2019</td>
+             <td>13</td>
+             <td>$3087.73</td>
+           </tr>
+           <tr>
+             <td>2020</td>
+             <td>48</td>
+             <td>$10,792.74</td>
+           </tr>
+         </table>
+           <br>
+           <a href="https://mcdetailingyyc.wixsite.com/mc-detailing" class="btn btn-dark" role="button" aria-pressed="true" target="_blank">View Website</a>
          </div>
-
+<!-- Second column, which uses a leaflet map -->
          <div class="right">
            <h1> Bike Trackr </h1>
+           <p3> I have recently started a new project with the goal of creating a low-cost GPS tracking system for my bike. I am using leaflet maps to display a marker and information on a webpage (example below), and an AWS windows environment server to receive GPS TCP/UDP data and store it in an SQL database. I can then pass this information to my webpage and update the location of the marker and address information. </p3>
+<!-- add the map here -->
            <div id="map"></div>
          </div>
       </div>
 
-
+<!-- Script for the map functions -->
         <script>
         //Add map variable and set view to calgary
         var map = L.map('map').setView([51.044, -114.07],12);
@@ -50,12 +97,31 @@
         var searchControl = L.esri.Geocoding.geosearch().addTo(map);
         var results = L.layerGroup().addTo(map);
         var geocodeService = L.esri.Geocoding.geocodeService();
+
+        var BikeIcon = L.icon({
+        iconUrl: 'bikeiconw.png',
+        iconSize:     [40, 30], // size of the icon
+        iconAnchor:   [20, 25], // point of the icon which will correspond to marker's location
+        popupAnchor:  [0, -20] // point from which the popup should open relative to the iconAnchor
+        });
+
         //If location found
         function onLocationFound(e) {
         var radius = e.accuracy;
+
+        L.esri.Geocoding.reverseGeocode().latlng(e.latlng).run(function (error, result, response) {
+        var address = result.address.Match_addr;
+
+        var d = new Date(); // for now
+        var hr = d.getHours(); // => 9
+        var mn = d.getMinutes(); // =>  30
+
          //Add marker and popup
-         var mark = L.marker(e.latlng).addTo(map)
-         mark.bindPopup("You are within " + radius + " meters from this point").openPopup();
+         var mark = L.marker(e.latlng, {icon: BikeIcon}).addTo(map)
+         mark.bindPopup('<b> Name:</b> Your Bike' + '<br><b>Last Reported Time: </b>' + hr + ':' + mn + '<br> <b> Address: </b>' + address + '<br> <b> Within:</b> ' + radius + ' meters').openPopup();
+        });
+
+
 
          L.circle(e.latlng, radius).addTo(map);
          }
