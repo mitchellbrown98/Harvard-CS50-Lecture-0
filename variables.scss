@@ -1,5 +1,16 @@
-$color: #f1f1f1;
+$color: #7ae0f5;
+$color2: #1d2526;
 
-flex-item {
+.flex-item {
   background: $color;
+  color: $color2;
+}
+
+h1,p{
+  font: {
+    family: 'Courier New', monospace;
+  }
+  text: {
+    color: grey;
+  }
 }

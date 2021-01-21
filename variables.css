@@ -1,0 +1,9 @@
+.flex-item {
+	background: #7ae0f5;
+	color: #1d2526;
+}
+
+h1, p {
+	font-family: 'Courier New', monospace;
+	color: grey;
+}
