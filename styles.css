@@ -1,3 +1,4 @@
+/* adjust font sizes */
 h1 {
   font-size: 350%;
 }
@@ -26,6 +27,7 @@ text-align: left;
 list-style: inside;
 }
 
+/* set some link properties */
 a:visited {
   color: grey!important;
 }
@@ -34,6 +36,7 @@ a:hover {
   color: #871010!important;
 }
 
+/* create some containers */
 .about {
   padding: 10px;
   width: 70%;
@@ -78,35 +81,36 @@ a:hover {
 
 /* Column container */
 .row {
-  display: -ms-flexbox; /* IE10 */
+  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
+/*left column*/
 .left {
-  -ms-flex: 50%; /* IE10 */
+  -ms-flex: 50%;
   flex: 50%;
   background-color: #f1f1f1;
   padding: 20px;
   text-align: center;
 }
-
+/*right column*/
 .right {
-  -ms-flex: 50%; /* IE10 */
+  -ms-flex: 50%;
   flex: 50%;
   background-color: white;
   padding: 20px;
   text-align: center;
 }
-
+/* image class */
 img.images {
   width: auto ;
   max-width: 50% ;
   height: auto ;
 }
 
-
+/* mobile query for smaller screens */
 @media screen and (max-width: 600px) {
   img.images {
     width: auto!important;
@@ -124,8 +128,10 @@ img.images {
   }
 }
 
+/* set the leaflet map size */
 #map { height: 500px; width: auto; }
 
+ /* set the circle properties */
 #circle {
   float: left;
   width: 500px;
@@ -136,11 +142,13 @@ img.images {
   background: white;
 }
 
+/* set table properties */
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
 
+/* set flex container properties */
 .flex-container {
   display: flex;
   flex-flow: row wrap;
@@ -150,6 +158,7 @@ table, th, td {
   list-style: none;
 }
 
+/* set flex item properties to go in flex container*/
 .flex-item {
   outline-style: solid;
   outline-width: 5px;
