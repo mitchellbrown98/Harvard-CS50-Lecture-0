@@ -102,23 +102,23 @@ img.images {
 }
 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   img.images {
-    width: auto ;
-    max-width: 100% ;
-    height: auto ;
+    width: auto!important;
+    max-width: 100%!important;
+    height: auto!important;
   }
   .center {
-    width: 100%;
+    width: 100%!important;
   }
   .center2 {
-    width: 80%;
+    width: 80%!important;
   }
   .center3 {
-    width: 80%;
+    width: 80%!important;
   }
   .about {
-    width: 90%;
+    width: 90%!important;
   }
 }
 
