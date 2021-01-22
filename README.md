@@ -38,6 +38,7 @@ This file is the 2nd stylesheet, created from variables.scss
 
 variables.scss
 This file is an SCSS, where I have declared some color variables for use in my bootstrap grid model on the art.html page.
+I have also used inheritance and nested classes to declare font type and color for h1 and p text. 
 
 Image files:
 bikeicon.png
