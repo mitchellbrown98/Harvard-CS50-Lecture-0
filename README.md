@@ -33,6 +33,9 @@ This file is my stylesheet, which I have used to include different CSS propertie
 sizes, create containers, use the #id selectors, and the .class selectors. I have also added mobile-responsive media queries
 here to adjust my image sizes and container sizes when viewing the website on a smaller screen.
 
+variables.css
+This file is the 2nd stylesheet, created from variables.scss
+
 variables.scss
 This file is an SCSS, where I have declared some color variables for use in my bootstrap grid model on the art.html page.
 
