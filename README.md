@@ -1,6 +1,6 @@
 # ENGO551-Lab0
 
-This project is based on Harvard CS50 Lecture 0 - Web Programming with Python and Javascript 2018. I have created a website consisting of 4 pages. A landing page,
+This project is based on Harvard CS50 Web Programming with Python and Javascript 2018 - Lecture 0 (Git) and Lecture 1 (HTML & CSS). I have created a website consisting of 4 pages. A landing page,
 an 'About me' page, an 'Art' page, and a 'Projects' page. The site is responsive, so it is mobile friendly and will adjust
 the content to the viewport size. 
 
